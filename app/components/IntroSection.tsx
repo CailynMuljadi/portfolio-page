@@ -8,6 +8,27 @@ interface DropdownProps {
   children: React.ReactNode;
 }
 
+// Self-contained custom SVG matching the exact 6-pointed star layout cleanly
+const LargeStarOfLifeBackground = () => (
+  <svg 
+    viewBox="0 0 100 100" 
+    className="w-full h-full opacity-85"
+    style={{ transformOrigin: '50px 50px' }}
+  >
+    {/* Grouping the rectangles to center pivot on (50, 50) */}
+    <g fill="#ffe347">
+      {/* Vertical Bar */}
+      <rect x="44" y="10" width="12" height="80" rx="6" />
+      
+      {/* Diagonal Bar 1 (Rotated 60 degrees) */}
+      <rect x="44" y="10" width="12" height="80" rx="6" transform="rotate(60 50 50)" />
+      
+      {/* Diagonal Bar 2 (Rotated 120 degrees) */}
+      <rect x="44" y="10" width="12" height="80" rx="6" transform="rotate(120 50 50)" />
+    </g>
+  </svg>
+);
+
 const DropdownSection: React.FC<DropdownProps> = ({ title, children }) => {
   const [isOpen, setIsOpen] = useState(false);
   return (
