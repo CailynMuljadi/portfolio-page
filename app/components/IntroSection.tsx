@@ -14,6 +14,7 @@ const LargeStarOfLifeBackground = () => (
     viewBox="0 0 512 512" 
     fill="#ffe347" 
     className="w-full h-full opacity-85"
+    style={{ transformOrigin: 'center center' }}
     >
   </svg>
 );
