@@ -31,25 +31,23 @@ export default function IntroSection() {
   return (
     <section className="max-w-4xl mx-auto py-20 px-6 grid grid-cols-1 md:grid-cols-3 gap-12 items-center relative z-10">
       
-      {/* 🖼️ Fixed Pop-out Avatar Container with Extra Top Padding */}
+      {/* 🖼️ Dynamic Real Pop-out Frame Setup */}
       <div className="flex justify-center relative pt-16 pb-4">
         
-        {/* Yellow glow circle matched perfectly to the frame height location */}
-        <div className="absolute bottom-4 bg-brand-yellow rounded-full w-56 h-56 -z-10 animate-spin-slow"></div>
+        {/* Animated outer background yellow glow element */}
+        <div className="absolute bottom-4 bg-brand-yellow rounded-full w-56 h-56 -z-20 animate-spin-slow"></div>
         
-        {/* The Base Frame Box (Masks the sides and bottom, leaves top completely open) */}
-        <div className="relative w-56 h-56 rounded-full border-x-4 border-b-4 border-t-0 border-brand-purple bg-gray-300 shadow-xl group">
+        {/* Layer 1: The Circle Frame Backing (Shows the purple border shape behind you) */}
+        <div className="absolute bottom-4 w-56 h-56 rounded-full border-4 border-brand-purple bg-gray-300 shadow-xl -z-10"></div>
+        
+        {/* Layer 2 & 3: Floating Frame Container (Masks the bottom border edge but leaves the top wide open) */}
+        <div className="relative w-56 h-56 rounded-b-full overflow-hidden group">
           
-          {/* Inner circle background helper color layer */}
-          <div className="absolute inset-0 bg-gray-300 rounded-full border-t-4 border-brand-purple opacity-20 -z-10"></div>
-          
-          {/* Increased height allocation space to h-[125%] 
-            Removed the strict rounded-b-full restriction if your picture baseline is pre-cropped 
-          */}
-          <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-[108%] h-[125%] origin-bottom transition-transform duration-300 group-hover:scale-105">
+          {/* Your avatar scales upwards and pops over the border without clipping */}
+          <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-[105%] h-[125%] origin-bottom transition-transform duration-300 group-hover:scale-105">
             <Image 
               src="/cailyn-profile.png" 
-              alt="Cailyn Muljadi" 
+              alt="Cailyn Muljadi Profile" 
               fill 
               sizes="260px"
               priority 
@@ -59,7 +57,7 @@ export default function IntroSection() {
         </div>
       </div>
 
-      {/* Info Sections Content Blocks */}
+      {/* Info Deck Section */}
       <div className="md:col-span-2 text-center md:text-left">
         <h2 className="text-brand-purple font-black text-4xl uppercase tracking-tight mb-3">Hi, I'm Cailyn Muljadi</h2>
         <p className="text-gray-700 mb-6 leading-relaxed">
