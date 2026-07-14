@@ -8,17 +8,6 @@ interface DropdownProps {
   children: React.ReactNode;
 }
 
-// Self-contained custom SVG path matching the exact blueprint of FaStarOfLife
-const LargeStarOfLifeBackground = () => (
-  <svg 
-    viewBox="0 0 512 512" 
-    fill="#ffe347" 
-    className="w-full h-full opacity-85"
-    style={{ transformOrigin: 'center center' }}
-    >
-  </svg>
-);
-
 const DropdownSection: React.FC<DropdownProps> = ({ title, children }) => {
   const [isOpen, setIsOpen] = useState(false);
   return (
