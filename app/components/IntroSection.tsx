@@ -32,11 +32,13 @@ export default function IntroSection() {
     <section className="max-w-4xl mx-auto py-20 px-6 grid grid-cols-1 md:grid-cols-3 gap-12 items-center relative z-10">
       <div className="flex justify-center relative">
         <div className="absolute inset-0 bg-brand-yellow rounded-full w-56 h-56 -z-10 animate-spin-slow"></div>
-        <div className="w-56 h-56 relative rounded-full overflow-hidden border-4 border-brand-purple shadow-xl bg-gray-200">
+        {/* Fixed image wrapper frame to display local avatar cleanly */}
+        <div className="w-56 h-56 relative rounded-full overflow-hidden border-4 border-brand-purple shadow-xl bg-gray-300">
           <Image 
-            src="/cailyn-profile.jpg" 
-            alt="Cailyn Muljadi Profile Pic" 
+            src="/cailyn-profile.png" 
+            alt="Cailyn Muljadi" 
             fill 
+            sizes="224px"
             priority 
             className="object-cover" 
           />
@@ -50,8 +52,10 @@ export default function IntroSection() {
         </p>
 
         <DropdownSection title="🎓 Education Details">
-          <p className="font-bold text-brand-purple">SISTECH - Information Technology</p>
-          <p className="text-sm">Specializing in Software & Front-End UI Architecture.</p>
+          <p className="font-bold text-brand-purple">SMAK 5 PENABUR Jakarta, Indonesia</p>
+          <p className="text-sm gap-y-1">Specialized in Higher Maths, Physics, Chemistry, Biology, and Art.</p>          
+          <p className="font-bold text-brand-purple">National Tsing Hua Univeristy, Taiwan</p>
+          <p className="text-sm gap-y-1">Engineering Techonoly - SPecializing in Industrial Engineering Management.</p>
         </DropdownSection>
 
         <DropdownSection title="🚀 Personal Strengths & Highlights">

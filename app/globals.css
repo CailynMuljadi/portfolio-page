@@ -10,7 +10,7 @@
   --color-brand-bg: #ece7f0;
 
   /* 🔄 2. Custom theme animation utilities configuration definitions */
-  --animate-marquee: marquee 20s linear infinite;
+  --animate-marquee: marquee 35s linear infinite;
   --animate-wiggle: wiggle 0.25s ease-in-out infinite;
   --animate-spin-slow: spin 12s linear infinite;
 
@@ -30,17 +30,17 @@
 /* 🌸 Flower Fade-Out Trail Keyframes & Utility Class */
 @keyframes flowerFade {
   0% { 
-    transform: translate(-50%, -50%) scale(0.4) rotate(0deg); 
+    transform: translate(-50%, -50%) scale(0.3) rotate(0deg); 
     opacity: 0.9; 
   }
   100% { 
-    transform: translate(-50%, -50%) scale(1.2) rotate(45deg); 
+    transform: translate(-50%, -50%) scale(1.1) rotate(90deg); 
     opacity: 0; 
   }
 }
 
 .animate-flower {
-  animation: flowerFade 0.8s ease-out forwards;
+  animation: flowerFade 0.9s ease-out forwards;
 }
 
 /* Base custom structure resets */

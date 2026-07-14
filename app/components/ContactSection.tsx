@@ -54,7 +54,7 @@ export default function ContactSection() {
           <InputField label="Email" name="email" type="email" value={formData.email} placeholder="Email" onChange={(e) => setFormData({...formData, email: e.target.value})} />
           <InputField label="Message" name="message" isTextArea value={formData.message} placeholder="Message" onChange={(e) => setFormData({...formData, message: e.target.value})} />
           <button type="submit" className="w-full mt-4 bg-brand-yellow hover:bg-amber-300 text-brand-purple font-black py-4 px-6 rounded-xl uppercase tracking-widest transition-all transform hover:-translate-y-1 shadow-lg">
-            Send Message 🚀
+            Send Message
           </button>
         </form>
       </div>
