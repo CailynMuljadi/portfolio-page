@@ -31,31 +31,35 @@ export default function IntroSection() {
   return (
     <section className="max-w-4xl mx-auto py-20 px-6 grid grid-cols-1 md:grid-cols-3 gap-12 items-center relative z-10">
       
-      {/* 🖼️ Pop-out Avatar Framing Container */}
-      <div className="flex justify-center relative pt-8">
-        {/* Animated outer background yellow glow element */}
-        <div className="absolute top-8 bg-brand-yellow rounded-full w-56 h-56 -z-10 animate-spin-slow"></div>
+      {/* 🖼️ Fixed Pop-out Avatar Container with Extra Top Padding */}
+      <div className="flex justify-center relative pt-16 pb-4">
         
-        {/* The Base Frame Box (Acts as the solid visible background and bottom/side border masking layer) */}
+        {/* Yellow glow circle matched perfectly to the frame height location */}
+        <div className="absolute bottom-4 bg-brand-yellow rounded-full w-56 h-56 -z-10 animate-spin-slow"></div>
+        
+        {/* The Base Frame Box (Masks the sides and bottom, leaves top completely open) */}
         <div className="relative w-56 h-56 rounded-full border-x-4 border-b-4 border-t-0 border-brand-purple bg-gray-300 shadow-xl group">
           
-          {/* Inner circle mask background helper */}
+          {/* Inner circle background helper color layer */}
           <div className="absolute inset-0 bg-gray-300 rounded-full border-t-4 border-brand-purple opacity-20 -z-10"></div>
           
-          {/* Absolute floating overlapping frame image block */}
-          <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-[105%] h-[120%] origin-bottom transition-transform duration-300 group-hover:scale-105">
+          {/* Increased height allocation space to h-[125%] 
+            Removed the strict rounded-b-full restriction if your picture baseline is pre-cropped 
+          */}
+          <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-[108%] h-[125%] origin-bottom transition-transform duration-300 group-hover:scale-105">
             <Image 
               src="/cailyn-profile.png" 
               alt="Cailyn Muljadi" 
               fill 
-              sizes="240px"
+              sizes="260px"
               priority 
-              className="object-cover object-bottom rounded-b-full" 
+              className="object-cover object-bottom" 
             />
           </div>
         </div>
       </div>
 
+      {/* Info Sections Content Blocks */}
       <div className="md:col-span-2 text-center md:text-left">
         <h2 className="text-brand-purple font-black text-4xl uppercase tracking-tight mb-3">Hi, I'm Cailyn Muljadi</h2>
         <p className="text-gray-700 mb-6 leading-relaxed">
