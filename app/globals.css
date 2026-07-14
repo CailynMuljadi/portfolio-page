@@ -1,25 +1,32 @@
-@import "tailwindcss"; /* Or standard Tailwind directives depending on your version */
+@import "tailwindcss";
 
-@layer utilities {
+@theme {
+  /* Your custom theme color choices */
+  --color-brand-purple: #9600ff;
+  --color-brand-pink: #ef767a;
+  --color-brand-yellow: #ffe347;
+  --color-brand-cyan: #23f0c7;
+  --color-brand-white: #fefefe;
+  --color-brand-bg: #ece7f0;
+
+  /* Custom folder animations */
+  --animate-wiggle: wiggle 0.25s ease-in-out infinite;
+  --animate-spin-slow: spin 12s linear infinite;
+  --animate-fadeIn: fadeIn 0.6s ease-out forwards;
+
+  @keyframes marquee {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-50%); }
+  }
   @keyframes wiggle {
     0%, 100% { transform: rotate(-4deg); }
     50% { transform: rotate(4deg); }
   }
-
   @keyframes fadeIn {
     0% { opacity: 0; transform: translateY(15px); }
     100% { opacity: 1; transform: translateY(0); }
   }
-
-  .animate-wiggle {
-    animation: wiggle 0.25s ease-in-out infinite;
-  }
-
-  .animate-fadeIn {
-    animation: fadeIn 0.6s ease-out forwards;
-  }
-
-  .animate-spin-slow {
-    animation: spin 12s linear infinite;
-  }
+}
+body {
+  overflow-x: hidden;
 }
