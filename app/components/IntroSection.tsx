@@ -8,6 +8,25 @@ interface DropdownProps {
   children: React.ReactNode;
 }
 
+// Custom 100% self-contained React Atom Shape SVG component for the background block
+const LargeReactLogoBackground = () => (
+  <svg 
+    viewBox="-11.5 -10.23174 23 20.46348" 
+    fill="none" 
+    xmlns="http://www.w3.org/2000/svg" 
+    stroke="#ffe347" 
+    strokeWidth="0.75" 
+    className="w-full h-full opacity-85"
+  >
+    <circle cx="0" cy="0" r="2.05" fill="#ffe347"/>
+    <g>
+      <ellipse rx="11" ry="4.2"/>
+      <ellipse rx="11" ry="4.2" transform="rotate(60)"/>
+      <ellipse rx="11" ry="4.2" transform="rotate(120)"/>
+    </g>
+  </svg>
+);
+
 const DropdownSection: React.FC<DropdownProps> = ({ title, children }) => {
   const [isOpen, setIsOpen] = useState(false);
   return (
@@ -31,33 +50,28 @@ export default function IntroSection() {
   return (
     <section className="max-w-4xl mx-auto py-20 px-6 grid grid-cols-1 md:grid-cols-3 gap-12 items-center relative z-10">
       
-      {/* 🖼️ Dynamic Real Pop-out Frame Setup */}
-      <div className="flex justify-center relative pt-16 pb-4">
+      {/* 🖼️ Clean Unclipped Image Box with Big Yellow React Shape Backdrop */}
+      <div className="flex justify-center items-center relative min-h-[320px] w-full group">
         
-        {/* Animated outer background yellow glow element */}
-        <div className="absolute bottom-4 bg-brand-yellow rounded-full w-56 h-56 -z-20 animate-spin-slow"></div>
+        {/* Layer 1: The Large Yellow React Logo Shape (Slowly Spinning) */}
+        <div className="absolute w-72 h-72 z-0 animate-spin-slow pointer-events-none flex items-center justify-center">
+          <LargeReactLogoBackground />
+        </div>
         
-        {/* Layer 1: The Circle Frame Backing (Shows the purple border shape behind you) */}
-        <div className="absolute bottom-4 w-56 h-56 rounded-full border-4 border-brand-purple bg-gray-300 shadow-xl -z-10"></div>
-        
-        {/* Layer 2 & 3: Floating Frame Container (Masks the bottom border edge but leaves the top wide open) */}
-        <div className="relative w-56 h-56 rounded-b-full overflow-hidden group">
-          
-          {/* Your avatar scales upwards and pops over the border without clipping */}
-          <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-[105%] h-[125%] origin-bottom transition-transform duration-300 group-hover:scale-105">
-            <Image 
-              src="/cailyn-profile.png" 
-              alt="Cailyn Muljadi Profile" 
-              fill 
-              sizes="260px"
-              priority 
-              className="object-cover object-bottom" 
-            />
-          </div>
+        {/* Layer 2: The Portrait PNG Image (Completely loose and unclipped) */}
+        <div className="relative w-64 h-80 z-10 transition-transform duration-300 group-hover:scale-105">
+          <Image 
+            src="/cailyn-profile.png" 
+            alt="Cailyn Muljadi Portfolio Portrait" 
+            fill 
+            sizes="256px"
+            priority 
+            className="object-contain object-center" 
+          />
         </div>
       </div>
 
-      {/* Info Deck Section */}
+      {/* Info Section Columns */}
       <div className="md:col-span-2 text-center md:text-left">
         <h2 className="text-brand-purple font-black text-4xl uppercase tracking-tight mb-3">Hi, I'm Cailyn Muljadi</h2>
         <p className="text-gray-700 mb-6 leading-relaxed">
