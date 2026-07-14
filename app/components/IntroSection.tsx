@@ -51,14 +51,24 @@ export default function IntroSection() {
           I am a <strong className="text-brand-purple">Front-End Engineering Student</strong> passionate about building responsive, modern user interfaces with smooth client-side interactions.
         </p>
 
-        <DropdownSection title="🎓 Education Details">
+        <DropdownSection title="Education Details">
           <p className="font-bold text-brand-purple">SMAK 5 PENABUR Jakarta, Indonesia</p>
           <p className="text-sm gap-y-1">Specialized in Higher Maths, Physics, Chemistry, Biology, and Art.</p>          
           <p className="font-bold text-brand-purple">National Tsing Hua Univeristy, Taiwan</p>
           <p className="text-sm gap-y-1">Engineering Techonoly - SPecializing in Industrial Engineering Management.</p>
         </DropdownSection>
+        
+        <DropdownSection title="Highlights">
+          <div className="flex flex-wrap gap-2 pt-1">
+            {['High School Valedictorian', 'STEM Research & Competition Experience', 'Leadership Across School & Nonprofit Organizations'].map((str) => (
+              <span key={str} className="bg-brand-cyan text-brand-white text-xs font-bold px-3 py-1 rounded-full uppercase">
+                ⭐ {str}
+              </span>
+            ))}
+          </div>
+        </DropdownSection>
 
-        <DropdownSection title="🚀 Personal Strengths & Highlights">
+        <DropdownSection title="Personal Strengths">
           <div className="flex flex-wrap gap-2 pt-1">
             {['Design Thinking', 'Systems Thinking', 'Self Leadership', 'Collaboration'].map((str) => (
               <span key={str} className="bg-brand-pink text-brand-white text-xs font-bold px-3 py-1 rounded-full uppercase">
