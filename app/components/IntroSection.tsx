@@ -8,22 +8,14 @@ interface DropdownProps {
   children: React.ReactNode;
 }
 
-// Custom 100% self-contained React Atom Shape SVG component for the background block
-const LargeReactLogoBackground = () => (
+// Self-contained custom SVG path matching the exact blueprint of FaStarOfLife
+const LargeStarOfLifeBackground = () => (
   <svg 
-    viewBox="-11.5 -10.23174 23 20.46348" 
-    fill="none" 
-    xmlns="http://www.w3.org/2000/svg" 
-    stroke="#ffe347" 
-    strokeWidth="0.75" 
+    viewBox="0 0 512 512" 
+    fill="#ffe347" 
     className="w-full h-full opacity-85"
   >
-    <circle cx="0" cy="0" r="2.05" fill="#ffe347"/>
-    <g>
-      <ellipse rx="11" ry="4.2"/>
-      <ellipse rx="11" ry="4.2" transform="rotate(60)"/>
-      <ellipse rx="11" ry="4.2" transform="rotate(120)"/>
-    </g>
+    <path d="M256 0c-17.7 0-32 14.3-32 32v124.7L116.1 48.8c-15.3-8.8-34.9-3.6-43.7 11.7s-3.6 34.9 11.7 43.7l107.9 62.3L84 166.5c-15.3 8.8-20.5 28.4-11.7 43.7s28.4 20.5 43.7 11.7l107.9-62.3V256H99.3l62.3 107.9c8.8 15.3 3.6 34.9-11.7 43.7s-34.9 3-43.7-11.7L44.1 288c-8.8-15.3-28.4-20.5-43.7-11.7S-20.1 304.7-11.3 420l62.3-107.9v100.6c0 17.7 14.3 32 32 32s32-14.3 32-32V312.1l107.9 62.3c15.3 8.8 34.9 3.6 43.7-11.7s3.6-34.9-11.7-43.7L157 256.7l107.9-62.3c15.3-8.8 20.5-28.4 11.7-43.7s-28.4-20.5-43.7-11.7L125.1 201.3V99.3l62.3 107.9c8.8 15.3 28.4 20.5 43.7 11.7s20.5-28.4 11.7-43.7L180.5 168h124.7c17.7 0 32-14.3 32-32s-14.3-32-32-32H331.5l62.3-107.9c8.8-15.3 3.6-34.9-11.7-43.7s-34.9-3.6-43.7 11.7L276.1 124.7V32c0-17.7-14.3-32-32-32z"/>
   </svg>
 );
 
@@ -50,15 +42,15 @@ export default function IntroSection() {
   return (
     <section className="max-w-4xl mx-auto py-20 px-6 grid grid-cols-1 md:grid-cols-3 gap-12 items-center relative z-10">
       
-      {/* 🖼️ Clean Unclipped Image Box with Big Yellow React Shape Backdrop */}
-      <div className="flex justify-center items-center relative min-h-[320px] w-full group">
+      {/* 🖼️ Full PNG Layout Image Deck with Star Of Life Yellow Backdrop */}
+      <div className="flex justify-center items-center relative min-h-[340px] w-full group">
         
-        {/* Layer 1: The Large Yellow React Logo Shape (Slowly Spinning) */}
+        {/* Layer 1: Giant Yellow FaStarOfLife Shape (Slowly Rotating) */}
         <div className="absolute w-72 h-72 z-0 animate-spin-slow pointer-events-none flex items-center justify-center">
-          <LargeReactLogoBackground />
+          <LargeStarOfLifeBackground />
         </div>
         
-        {/* Layer 2: The Portrait PNG Image (Completely loose and unclipped) */}
+        {/* Layer 2: Full unclipped frame portrait photo */}
         <div className="relative w-64 h-80 z-10 transition-transform duration-300 group-hover:scale-105">
           <Image 
             src="/cailyn-profile.png" 
@@ -71,7 +63,7 @@ export default function IntroSection() {
         </div>
       </div>
 
-      {/* Info Section Columns */}
+      {/* Info Context Details Section Column Blocks */}
       <div className="md:col-span-2 text-center md:text-left">
         <h2 className="text-brand-purple font-black text-4xl uppercase tracking-tight mb-3">Hi, I'm Cailyn Muljadi</h2>
         <p className="text-gray-700 mb-6 leading-relaxed">
