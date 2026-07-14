@@ -32,8 +32,14 @@ export default function IntroSection() {
     <section className="max-w-4xl mx-auto py-20 px-6 grid grid-cols-1 md:grid-cols-3 gap-12 items-center relative z-10">
       <div className="flex justify-center relative">
         <div className="absolute inset-0 bg-brand-yellow rounded-full w-56 h-56 -z-10 animate-spin-slow"></div>
-        <div className="w-56 h-56 relative rounded-full overflow-hidden border-4 border-brand-purple shadow-xl">
-          <Image src="/cailyn-profile.jpg" alt="Cailyn Muljadi" fill priority className="object-cover" />
+        <div className="w-56 h-56 relative rounded-full overflow-hidden border-4 border-brand-purple shadow-xl bg-gray-200">
+          <Image 
+            src="/cailyn-profile.jpg" 
+            alt="Cailyn Muljadi Profile Pic" 
+            fill 
+            priority 
+            className="object-cover" 
+          />
         </div>
       </div>
 

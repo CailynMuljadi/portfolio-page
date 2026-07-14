@@ -32,10 +32,10 @@ export default function ProjectsSection() {
   const [searchTerm, setSearchTerm] = useState('');
   
   const projects = [
-    { id: 1, name: 'NOMNOMBOOK', link: 'https://drive.google.com/drive/folders/your-link-1' },
-    { id: 2, name: 'ALLEYBOOKCLUB', link: 'https://drive.google.com/drive/folders/your-link-2' },
-    { id: 3, name: 'RETRAY', link: 'https://drive.google.com/drive/folders/your-link-3' },
-    { id: 4, name: 'SISTECH CAFE', link: 'https://drive.google.com/drive/folders/your-link-4' },
+    { id: 1, name: 'NOMNOMBOOK', link: 'https://drive.google.com/file/d/1hD79dtx9IXsjO_9XyLGZTRfreYuvLtVK/view?usp=drive_link' },
+    { id: 2, name: 'ALLEYBOOKCLUB', link: 'https://drive.google.com/file/d/1dRo1NosihqmQurtxalOiQU-YDKogPZPh/view?usp=drive_link' },
+    { id: 3, name: 'RETRAY', link: 'https://drive.google.com/file/d/1Vao-nqj6eKfGznlyQypmhMpvVFYfdX4M/view?usp=drive_link' },
+    { id: 4, name: 'SISTECH CAFE', link: 'https://drive.google.com/file/d/1Xap5mrarOSv4Tmt6TPTdMLXwhcitdRrX/view?usp=drive_link' },
   ];
 
   const filtered = projects.filter(p => p.name.toLowerCase().includes(searchTerm.toLowerCase()));
